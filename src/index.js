@@ -1,4 +1,4 @@
-require('babel-polyfill')
+import polyfill from 'babel-polyfill'
 import Observable from './observable'
 
 // const source =
@@ -20,7 +20,7 @@ const source =
       const res = gn.next()
       if (!res.done) {
         observer.next(res.value)
-        setTimeout(emit, 300)
+        setTimeout(emit, 200)
       } else {
         observer.complete()
       }

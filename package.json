@@ -11,12 +11,14 @@
     "start": "node bin/index.js",
     "debug": "node --inspect --debug-brk bin/index.js",
     "build": "babel src -s inline -d bin",
-    "watch": "babel src -s inline -d bin -w"
+    "watch": "babel src -s inline -d bin -w",
+    "doc": "esdoc"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-latest": "^6.22.0"
+    "babel-preset-latest": "^6.22.0",
+    "esdoc": "^0.5.2"
   }
 }

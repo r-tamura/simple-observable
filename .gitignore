@@ -1,2 +1,9 @@
+# Installed libs
 node_modules/
+
+# Generated
 bin/**/*.js
+doc/
+
+# Misc
+npm-debug.log
