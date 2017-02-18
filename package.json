@@ -9,6 +9,7 @@
   "license": "ISC",
   "scripts": {
     "start": "node bin/index.js",
+    "debug": "node --inspect --debug-brk bin/index.js",
     "build": "babel src -s inline -d bin",
     "watch": "babel src -s inline -d bin -w"
   },

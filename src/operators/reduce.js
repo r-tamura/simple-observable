@@ -1,11 +1,11 @@
-import Observable, { Observer } from '../observable'
+import Observable from '../observable'
 
 export default function (Observable) {
   Observable.prototype.reduce = function reduce(accumlator, seed) {
     // reduceの初期値
     let acc = seed
     const outputObservable = new Observable(observer => {
-      this.subscribe(new Observer({
+      this.subscribe({
         next: x => {
           acc = accumlator(acc, x)
         },
@@ -14,7 +14,7 @@ export default function (Observable) {
           observer.next(acc)
           observer.complete()
         }
-      }))
+      })
     })
     return outputObservable
   }

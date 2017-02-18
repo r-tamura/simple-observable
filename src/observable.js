@@ -1,3 +1,18 @@
+import Observer from './observer'
+
+function toObserver(observerOrNext, error, complete) {
+
+  if(arguments.length === 0) {
+    return new Observer()
+  }
+
+  if(typeof observerOrNext === 'object') {
+    return new Observer(observerOrNext)
+  }
+
+  return new Observer({next: observerOrNext, error, complete})
+}
+
 export default class Observable {
   constructor(subscribe) {
     this._subscribe = subscribe
@@ -14,7 +29,8 @@ export default class Observable {
     })
   }
 
-  subscribe(observer) {
+  subscribe(observerOrNext, error, complter) {
+    const observer = toObserver(observerOrNext, error, complter)
     this._subscribe(observer)
   }
 }
